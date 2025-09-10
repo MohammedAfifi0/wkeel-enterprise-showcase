@@ -1,96 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* WKEEL Enterprise Design System - Pure Black Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Core Brand Colors - Pure Black Theme */
+    --bg: 0 0% 0%;                    /* #000000 - pure black background */
+    --text: 0 0% 100%;                /* #FFFFFF - primary white text */
+    --muted: 0 0% 93%;                /* #EDEDED - subheads, borders, captions */
+    --dim: 0 0% 74%;                  /* #BDBDBD - secondary text */
+    --surface: 0 0% 4%;               /* #0A0A0A - cards/sections */
+    --line: 0 0% 10%;                 /* #1A1A1A - hairline dividers */
+    
+    /* Interactive States */
+    --primary-bg: 0 0% 100%;          /* White button background */
+    --primary-text: 0 0% 0%;          /* Black button text */
+    --primary-hover: 0 0% 95%;        /* #F2F2F2 button hover */
+    --secondary-border: 0 0% 93%;     /* #EDEDED outline buttons */
+    --secondary-hover: 0 0% 7%;       /* #111 secondary hover fill */
+    
+    /* Gradients & Effects */
+    --hero-gradient: radial-gradient(ellipse at center, hsl(0 0% 2%) 0%, hsl(0 0% 0%) 70%);
+    --grid-pattern: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      hsl(0 0% 6%) 41px,
+      hsl(0 0% 6%) 42px
+    );
+    
+    /* Semantic mappings for shadcn compatibility */
+    --background: var(--bg);
+    --foreground: var(--text);
+    --card: var(--surface);
+    --card-foreground: var(--text);
+    --popover: var(--surface);
+    --popover-foreground: var(--text);
+    --primary: var(--primary-bg);
+    --primary-foreground: var(--primary-text);
+    --secondary: var(--surface);
+    --secondary-foreground: var(--text);
+    --accent: var(--surface);
+    --accent-foreground: var(--text);
+    --muted-bg: var(--surface);
+    --muted-foreground: var(--dim);
+    --border: var(--line);
+    --input: var(--line);
+    --ring: var(--text);
+    --radius: 0.75rem;
+    
+    /* Typography Scale */
+    --text-h1: 3.5rem;        /* 56px */
+    --text-h2: 2.5rem;        /* 40px */
+    --text-h3: 1.75rem;       /* 28px */
+    --text-body: 1rem;        /* 16px */
+    --text-small: 0.875rem;   /* 14px */
+    
+    --leading-h1: 4rem;       /* 64px */
+    --leading-h2: 3rem;       /* 48px */
+    --leading-h3: 2.25rem;    /* 36px */
+    --leading-body: 1.625rem; /* 26px */
+    --leading-small: 1.375rem; /* 22px */
+    
+    /* Animation & Transitions */
+    --transition-fast: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-lift: 0 4px 20px -2px hsl(0 0% 0% / 0.25);
   }
 }
 
@@ -100,6 +79,38 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-wkeel-bg text-wkeel-text font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Accessibility */
+  .sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  .focus\:not-sr-only:focus {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    padding: inherit !important;
+    margin: inherit !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+  }
+
+  /* Focus styles for better accessibility */
+  :focus-visible {
+    outline: 2px solid hsl(var(--text));
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
